@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Assignment-1</h1>
+    <ol>
+        <li>
+        <ol >
+            <li><code>db.college.find({runtime:{$gt:150}},{title:1,_id:0})</code></li>
+            <li><code> db.college.find({rating:{$gt:8.5}},{title:1,_id:0})</code></li>
+            <li><code>db.college.find({year:{$gte:2000,$lte:2015}},{title:1,_id:0})</code></li>
+            <li><code> db.college.find({$or:[{boxOffice:{$lte:500}},{boxOffice:{$gte:1000}}]},{title:1,_id:0})</code></li>
+        </ol>
+    </li>
+    <br>
+    <li><code>db.college.find({$and:[{director:"Christopher Nolan"},{isOscarWinner:{$exists:1}},{boxOffice:{$gt:700}},{streamingOn:{$in:["Netflix"]}}]},{title:1,_id:0})</code></li><br>
+    <li><code>db.college.find({ "specialFeatures.behindTheScenes": true, "specialFeatures.deletedScenes":true} ,{title:1,_id:0})</code></li><br>
+    <li><code>db.college.find( { $and : [ {cast: {$in:['Carrie-Anne Moss','Morgan Freeman']} }, {languages:{$exists:1}},{streamingOn:{$exists:1}}, {$expr:{$gte: [{$size:"$streamingOn"},2] } } ] },{title:1,_id:0})</code></li>    
+</ol>
+
+    
+</body>
+</html>
